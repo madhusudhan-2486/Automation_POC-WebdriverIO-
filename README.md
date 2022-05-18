@@ -8,3 +8,5 @@ Open the project in Microsoft Visual Studio (File -> Open Folder -> select{Autom
 Open the New Terminal -> New Terminal
 run the command npm test
 
+After Execution Generate the allure report by executing the following command
+allure generate ./allure-results && allure open
