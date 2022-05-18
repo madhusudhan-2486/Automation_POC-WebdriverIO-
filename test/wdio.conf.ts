@@ -126,7 +126,7 @@ export const config: Options.Testrunner = {
     baseUrl: 'http://automationpractice.com/',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 30000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -161,17 +161,7 @@ export const config: Options.Testrunner = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    //reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
-
-    // exports.config = {
-    //     // ...
-        reporters: [['allure', {
-            outputDir: 'allure-results',
-            //disableWebdriverStepsReporting: true,
-            //disableWebdriverScreenshotsReporting: true,
-        }]],
-    //     // ...
-    // },
+    reporters: [['allure', {outputDir: 'allure-results'}]],
 
 
     //

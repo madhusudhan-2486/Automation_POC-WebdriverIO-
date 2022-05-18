@@ -5,3 +5,14 @@ Feature: The automation practice Website
     Given I am on the home page
     When I clicked SignIn link
     Then I should see Authentication page
+
+    Scenario Outline: As a user, add a product to the cart
+
+    Given I have logged in with <email> and <password> 
+    When I select the product 
+    And Add to the cart
+    Then Your shopping cart page should be displayed
+
+    Examples:
+      | email           | password | 
+      | abcd1@abcd1.com | Test@123 | 

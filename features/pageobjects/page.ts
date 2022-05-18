@@ -10,4 +10,8 @@ export default class Page {
     public open (path: string) {
         return browser.url(`http://automationpractice.com/${path}`)
     }
+
+    public async waitTime(wait: number){
+        await browser.pause(wait);
+    }
 }
