@@ -30,23 +30,25 @@ Given(/^I am on the Create an Account page by providing email (.+)$/, async (ema
 When(/^Mandatory required fields (.+) (.+) (.+) (.+) (.+) (.+) (.+) (.+) (.+) (.+) (.+) (.+) (.+) is entered and Register button is clicked$/, 
 async (Title, Fname, Lname, email, Pwd, Add_FName, Add_LName, Address, City, State, ZipCode, MobilePhone, AliasAddress) => {
         
-        await pages.createAnAccount.selectTitle(Title);
-        await pages.createAnAccount.enterFirstName(Fname);
-        await pages.createAnAccount.enterLastName(Lname);
-        await pages.createAnAccount.enterEmail(email);
-        await pages.createAnAccount.enterPassword(Pwd);
-        await pages.createAnAccount.enterAddressFirstName(Add_FName);
-        await pages.createAnAccount.enterAddressLastName(Add_LName);
-        await pages.createAnAccount.enterAddress(Address);
-        await pages.createAnAccount.enterCity(City);
-        await pages.createAnAccount.selectState(State);
-        await pages.createAnAccount.enterZipCode(ZipCode);
-        await pages.createAnAccount.enterMobilePhone(MobilePhone);
-        CreateAnAccountPage.waitTime(30000);
-        pages.createAnAccount.waitTime(30000);
+    CreateAnAccountPage.waitTime(30000);
+    pages.createAnAccount.waitTime(30000);    
+    await pages.createAnAccount.selectTitle(Title);
+    await pages.createAnAccount.enterFirstName(Fname);
+    await pages.createAnAccount.enterLastName(Lname);
+    await pages.createAnAccount.enterEmail(email);
+    await pages.createAnAccount.enterPassword(Pwd);
+    await pages.createAnAccount.enterAddressFirstName(Add_FName);
+    await pages.createAnAccount.enterAddressLastName(Add_LName);
+    await pages.createAnAccount.enterAddress(Address);
+    await pages.createAnAccount.enterCity(City);
+    await pages.createAnAccount.selectState(State);
+    await pages.createAnAccount.enterZipCode(ZipCode);
+    await pages.createAnAccount.enterMobilePhone(MobilePhone);
+    CreateAnAccountPage.waitTime(30000);
+    pages.createAnAccount.waitTime(30000);
 
-        console.log(AliasAddress)
-        await pages.createAnAccount.enterAliasAddress(AliasAddress);
+    console.log(AliasAddress)
+    await pages.createAnAccount.enterAliasAddress(AliasAddress);
         
 
         

@@ -39,6 +39,10 @@ class HomePage extends Page {
         return $('div.clearfix a.btn.btn-default.button.button-medium')
     }
 
+    public get Logout() {
+        return $('div.header_user_info a.logout')
+    }
+
 
     public async clickWomenCategoriesTab(){
         await this.womenCategoriesTab.waitForDisplayed();
@@ -60,6 +64,11 @@ class HomePage extends Page {
     public async clickProceedToCheckoutButton() {
         await this.ProceedToCheckout.waitForDisplayed();
         await this.ProceedToCheckout.click();
+    }
+
+    public async clickLogout() {
+        await this.Logout.waitForDisplayed();
+        await this.Logout.click();
     }
 
     

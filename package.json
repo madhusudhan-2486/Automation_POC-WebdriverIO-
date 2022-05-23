@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run test/wdio.conf.ts"
+    "test": "wdio run test/wdio.conf.ts",
+    "report": "allure generate allure-results --clean && allure open"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,8 @@
   },
   "dependencies": {
     "@wdio/codemod": "^0.12.0",
+    "@wdio/types": "^7.19.5",
+    "expect-webdriverio": "^3.4.0",
     "jscodeshift": "^0.13.1",
     "webdriverio": "^7.19.7"
   }

@@ -10,20 +10,17 @@ const pages = {
     authenticate: AuthenticatePage
 }
 
-Given(/^I am on the home page$/,  () => {
+Given(/^I am on the home page$/, async () => {
     pages.home.open()
-    console.log("Executed Step 1")
-    //await expect(HomePage.signInLink).toBeExisting();
+    await expect(HomePage.signInLink).toBeExisting();
 });
 
 When(/^I clicked SignIn link$/, async () => {
     await pages.home.clickSignIn()
-    console.log("Executed Step 2")
 });
 
 Then(/^I should see Authentication page$/, async () => {
     await expect(AuthenticatePage.authenticationHeader).toBeExisting();
-    console.log("Executed Step 3")
 });
 
 Given(/^I am on the login page$/, async () => {
@@ -38,9 +35,11 @@ When(/^I login with (.+) and (.+)$/, async (email, password) => {
     await LoginPage.login(email, password)
 });
 
-Then(/^I should see a My Account page user (.*)$/, async (username) => {
+Then(/^I should see a My Account page user (.*) and Logout from the account$/, async (username) => {
     await expect(HomePage.userName).toBeExisting();
     await expect(HomePage.userName).toHaveTextContaining(username);
     await expect(HomePage.myAccountHeader).toBeExisting();
-    await expect(HomePage.myAccountHeader).toHaveTextContaining("My account")
+    await expect(HomePage.myAccountHeader).toHaveTextContaining("My account");
+    await pages.home.clickLogout();
 });
+

@@ -12,6 +12,7 @@ Feature: The automation practice Website
     When I select the product 
     And Add to the cart
     Then Your shopping cart page should be displayed
+    And Logout from the account
 
     Examples:
       | email           | password | 

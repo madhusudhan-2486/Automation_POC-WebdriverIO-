@@ -45,8 +45,14 @@ When(/^Add to the cart$/, async () => {
     await pages.home.clickProceedToCheckoutButton();
 });
 
-When(/^Your shopping cart page should be displayed$/, async () => {
+Then(/^Your shopping cart page should be displayed$/, async () => {
     await expect(HomePage.myAccountHeader).toBeDisplayed();
     await expect(HomePage.myAccountHeader).toHaveTextContaining("Your shopping cart");
 });
+
+Then(/^Logout from the account$/, async () => {
+    await pages.home.clickLogout();
+});
+
+
 

@@ -7,7 +7,7 @@ class CreateAnAccount extends Page {
         await createAnAccount.waitForDisplayed();
     }
 
-    public get getProfilePageHeader(){
+    public get getProfilePageHeader() {
         return $('div.account_creation:nth-child(1) > h3.page-subheading');
     }
 
@@ -70,9 +70,10 @@ class CreateAnAccount extends Page {
     }
 
     public async selectState(State: string){
-        const stateField = await $('div#uniform-id_state')
-        await stateField.waitForDisplayed();
-        await stateField.selectByVisibleText(State)
+        const stateField = await $('div#uniform-id_state select')
+        //await stateField.waitForDisplayed();
+        await stateField.click();
+        await stateField.selectByVisibleText(State);
     }
 
     public async enterZipCode(ZipCode: string){
@@ -86,7 +87,7 @@ class CreateAnAccount extends Page {
         await countryField.selectByAttribute("value", "21")
     }
 
-    public async enterMobilePhone(MobilePhone: string){
+    public async enterMobilePhone(MobilePhone: string) {
         const mobilePhoneField = await $('#phone_mobile');
         await mobilePhoneField.setValue(MobilePhone);
     }
